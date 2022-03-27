@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/15c26e1696.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>LadoDicá</title>
+  </head>
+  <body>
+    <div class="models">
+      <div class="models-item">
+        <a href="">
+          <div class="models-item-img">
+            <img src="" alt="" />
+          </div>
+          <div class="models-item--add">+</div>
+        </a>
+        <div class="models-item--price">R$</div>
+        <div class="models-item--name">nome</div>
+        <div class="models-item-desc"></div>
+      </div>
+      <div class="cart--item">
+        <img src="" alt="" />
+        <div class="cart--item--qtarea">
+          <button class="cart--item-qtmenos">-</button>
+          <div class="cart--item--qt">1</div>
+          <button class="cart--item--qtmais">+</button>
+        </div>
+      </div>
+    </div>
+    <header>
+      <div class="menu-openner">
+        <span>0</span>
+        <span class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+      </div>
+    </header>
+    <main>
+      <h1>Produtos</h1>
+      <div class="models-area"></div>
+    </main>
+    <aside>
+      <div class="cart-area">
+        <div class="menu-closer">
+          <span class="cart-icon-closer"
+            ><i class="fa-solid fa-xmark"></i
+          ></span>
+        </div>
+        <h1>Produto Escolhido</h1>
+        <div class="cart"></div>
+        <div class="cart--details">
+          <div class="cart--total-item subtotal">
+            <span>Subtotal</span>
+            <span>R$--</span>
+          </div>
+          <div class="cart--total-item desconto">
+            <span>Desconto (-10%)</span>
+            <span>R$--</span>
+          </div>
+          <div class="cart--finalizar">Finalizar Compra</div>
+        </div>
+      </div>
+    </aside>
+    <div class="modelsWindowArea">
+      <div class="modelsWindowBody">
+        <div class="modelsInfo--cancelMobileButton">Voltar</div>
+        <div class="modelsBig">
+          <img src="" alt="" />
+        </div>
+        <div class="modelsInfo">
+          <h1>--</h1>
+          <div class="modelsInfo--desc">--</div>
+          <div class="modelsInfo--sizearea">
+            <div class="modelInfo--sector">Tamanhos</div>
+            <div class="modelsInfo--size">
+              <div data-key="0" class="modelsInfo--size">P <span>--</span></div>
+              <div data-key="1" class="modelsInfo--size selected">
+                M <span>--</span>
+              </div>
+              <div data-key="2" class="modelsInfo--size">G <span>--</span></div>
+            </div>
+          </div>
+          <div class="modelsInfo-pricearea">
+            <div class="modelsInfo--sector">Preço</div>
+            <div class="modelsInfo--price">
+              <div class="modelsInfo--actualPrice">R$</div>
+              <div class="modelsInfo--qtarea">
+                <button class="modelsInfo--qtmenos">-</button>
+                <div class="modelsInfo--qt"></div>
+                <button class="modelsInfo--qtmais">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="modelsInfo--addbutton">Adicionar ao carrinho</div>
+          <div class="models-info--cancelbutton">Cancelar</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="produtos.js"></script>
+  </body>
+</html>
