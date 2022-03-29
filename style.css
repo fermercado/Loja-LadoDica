@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fredoka', sans-serif;
+}
+
+body {
+  font-size: 1.2rem;
+  min-height: 100vh;
+  display: flex;
+}
+
+.models {
+  display: flex;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 60px;
+  background-color: aqua;
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-openner {
+  margin-right: 15px;
+  font-size: 1.8rem;
+  background-color: antiquewhite;
+  padding: 5px 50px;
+  border-radius: 5px;
+}
+
+.menu-openner span {
+  margin-right: 10px;
+}
+
+.menu-closer {
+  width: 32px;
+  height: 32px;
+  display: none;
+  font-size: 2.4rem;
+}
+
+aside {
+  background-color: antiquewhite;
+  width: 0vw;
+  transition: all ease 0.2s;
+  overflow-x: hidden;
+}
+
+aside.show {
+  width: 30vw;
+}
+
+.cart--area {
+  padding: 20px;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.models-area {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.models-item {
+  text-align: center;
+  max-width: 250px;
+  margin: 0 auto 50px auto;
+}
+
+.models-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.models-item--img {
+  width: 300px;
+  height: 300px;
+  background-color: blue;
+  border-radius: 20px;
+  box-shadow: 0 10px 50px #000;
+}
+
+.models-item--img img {
+  width: 100%;
+  height: auto;
+}
+
+.models-item--add {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: blueviolet;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  margin-top: -25px;
+  transition: all ease 0.2s;
+}
+
+.models-item a:hover .models-item--add {
+  background-color: chocolate;
+}
+
+.models-item--price {
+  font-size: 15px;
+  color: #333;
+  margin-top: 5px;
+}
+
+.models-item--name {
+  font-size: 15px;
+  color: #000;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.models-item--desc {
+  font-size: 13px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.modelsWindowArea {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: none;
+  transition: all ease 0.5s;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.modelsWindowBody {
+  width: 900px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #999;
+  display: flex;
+  margin: 20px 0;
+}
+
+.modelsBig {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modelsBig--back {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+}
+
+.modelsBig img {
+  height: 400px;
+  width: auto;
+}
