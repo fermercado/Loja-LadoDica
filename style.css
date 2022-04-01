@@ -41,7 +41,7 @@ header {
   margin-right: 10px;
 }
 
-.menu-closer {
+.menu-close {
   width: 32px;
   height: 32px;
   display: none;
@@ -406,15 +406,16 @@ h1 {
   background-color: #35af4a;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
   .models-area {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 840px) {
-  .body {
+  body {
     flex-direction: column;
+    display: flex;
   }
   .models-area {
     display: block;
@@ -443,11 +444,11 @@ h1 {
     width: auto;
   }
 
-  .cart--area {
+  .cart-area {
     width: 100vw;
   }
 
-  .menu-closer {
+  .menu-close {
     display: block;
   }
 
@@ -472,7 +473,7 @@ h1 {
   }
 
   .modelsBig img {
-    height: 300px;
+    height: 350px;
     
   }
 
