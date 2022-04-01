@@ -22,10 +22,11 @@
         </a>
         <div class="models-item--price">R$</div>
         <div class="models-item--name">nome</div>
-        <div class="models-item-desc"></div>
+        <div class="models-item--desc"></div>
       </div>
       <div class="cart--item">
         <img src="" alt="" />
+        <div class="cart--item-nome"></div>
         <div class="cart--item--qtarea">
           <button class="cart--item-qtmenos">-</button>
           <div class="cart--item--qt">1</div>
@@ -57,8 +58,12 @@
             <span>Subtotal</span>
             <span>R$--</span>
           </div>
-          <div class="cart--total-item desconto">
+          <div class="cart--totalitem desconto">
             <span>Desconto (-10%)</span>
+            <span>R$--</span>
+          </div>
+          <div class="cart--totalitem total big">
+            <span>Total</span>
             <span>R$--</span>
           </div>
           <div class="cart--finalizar">Finalizar Compra</div>
@@ -76,7 +81,7 @@
           <div class="modelsInfo--desc">--</div>
           <div class="modelsInfo--sizearea">
             <div class="modelInfo--sector">Tamanhos</div>
-            <div class="modelsInfo--size">
+            <div class="modelsInfo--sizes">
               <div data-key="0" class="modelsInfo--size">P <span>--</span></div>
               <div data-key="1" class="modelsInfo--size selected">
                 M <span>--</span>
@@ -95,13 +100,15 @@
               </div>
             </div>
           </div>
-          <div class="modelsInfo--addbutton">Adicionar ao carrinho</div>
-          <div class="models-info--cancelbutton">Cancelar</div>
+          <div>
+            <div class="modelsInfo--addbutton">Adicionar ao carrinho</div>
+            <div class="modelsinfo--cancelbutton">Cancelar</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <script src="script.js"></script>
-    <script src="produtos.js"></script>
+    <script type="text/javascript" src="products.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
