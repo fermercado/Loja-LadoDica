@@ -31,11 +31,11 @@ let productsJson = [
       },
       {
         id: 203,
-        src: 'img/MILK-2.jpg'
+        src: 'img/MILK-3.jpg'
       },
       {
         id: 204,
-        src: 'img/MILK-3.jpg'
+        src: 'img/MILK-4.jpg'
       }
     ],
     price: 99.9,
