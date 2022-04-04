@@ -19,9 +19,12 @@ productsJson.map((item, index) => {
 
   productItem.querySelector('a').addEventListener('click', e => {
     e.preventDefault()
-    key = e.target.closest('.models-item').getAttribute('data-key')
+    key = e.target.closest('.models-item ').getAttribute('data-key', index)
     productQt = 1
-    a('.modelsBig img').src = productsJson[key].img[0].src
+    al('.carousel-item img').forEach((imgItem, imgIndex) => {
+      imgItem.src = productsJson[key].img[imgIndex].src
+    })
+    // a('.modelsBig img').src = productsJson[key].img[0].src
     a('.modelsInfo h1').innerHTML = productsJson[key].name
     a('.modelsInfo--desc').innerHTML = productsJson[key].description
     a('.modelsInfo--actualPrice').innerHTML = `R$ ${productsJson[
@@ -93,27 +96,29 @@ a('.menu-openner').addEventListener('click', () => {
 })
 a('.menu-openner').addEventListener('click', () => {
   if (cart.length > 0) {
-    a('.menu-desktop.ativo').style.width = '30vw'
+    a('.menu-desktop').classList.add('ativo')
   }
 })
 
 a('.cart--finalizar').addEventListener('click', () => {
   cart = []
   cartShow()
+  location.reload()
+  alert('COMPRA FINALIZADA')
 })
 
 a('.menu-close').addEventListener('click', () => {
   a('aside').style.left = '150vw'
 })
 a('.menu-close').addEventListener('click', () => {
-  a('.menu-desktop').style.width = '0'
+  a('.menu-desktop').classList.remove('ativo')
 })
 
 function cartShow() {
   a('.menu-openner span').innerHTML = cart.length
   if (cart.length > 0) {
-    a('.menu-desktop').classList.add('ativo')
     a('aside').classList.add('show')
+    a('.menu-desktop').classList.add('ativo')
     a('.cart').innerHTML = ''
     let subtotal = 0
     let desconto = 0
@@ -166,6 +171,7 @@ function cartShow() {
   } else {
     a('aside').classList.remove('show')
     a('.menu-desktop').classList.remove('ativo')
+    a('.menu-desktop').style.width = '0'
     a('aside').style.left = '150vw'
   }
 }
