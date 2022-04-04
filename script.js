@@ -91,6 +91,11 @@ a('.menu-openner').addEventListener('click', () => {
     a('aside').style.left = '0'
   }
 })
+a('.menu-openner').addEventListener('click', () => {
+  if (cart.length > 0) {
+    a('.menu-desktop.ativo').style.width = '30vw'
+  }
+})
 
 a('.cart--finalizar').addEventListener('click', () => {
   cart = []
@@ -98,12 +103,16 @@ a('.cart--finalizar').addEventListener('click', () => {
 })
 
 a('.menu-close').addEventListener('click', () => {
-  a('aside').style.left = '100vw'
+  a('aside').style.left = '150vw'
+})
+a('.menu-close').addEventListener('click', () => {
+  a('.menu-desktop').style.width = '0'
 })
 
 function cartShow() {
   a('.menu-openner span').innerHTML = cart.length
   if (cart.length > 0) {
+    a('.menu-desktop').classList.add('ativo')
     a('aside').classList.add('show')
     a('.cart').innerHTML = ''
     let subtotal = 0
@@ -156,6 +165,7 @@ function cartShow() {
     })
   } else {
     a('aside').classList.remove('show')
-    a('aside').style.left = '100vw'
+    a('.menu-desktop').classList.remove('ativo')
+    a('aside').style.left = '150vw'
   }
 }
