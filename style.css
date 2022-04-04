@@ -9,7 +9,6 @@
 
 body {
   font-size: 1.2rem;
-  min-height: 100vh;
   display: flex;
 }
 
@@ -22,8 +21,8 @@ header {
   left: 0;
   top: 0;
   right: 0;
-  height: 60px;
-  background-color: aqua;
+  height: 80px;
+  background-color: #BAE2DF;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -47,6 +46,18 @@ header {
   font-size: 2rem;
 }
 
+.cart-fixed {
+  position: fixed;
+  width: 30%;
+}
+
+.menu-desktop {
+  background-color: antiquewhite;
+  width: 0vw;
+  transition: all ease 0.2s;
+  overflow-x: hidden;
+}
+
 aside {
   background-color: antiquewhite;
   width: 0vw;
@@ -54,34 +65,41 @@ aside {
   overflow-x: hidden;
 }
 
-aside.show {
-  width: 30vw;
+.menu-desktop.ativo {
+  width: 30%;
 }
 
 .cart-area {
   padding: 20px;
+ 
+  
 }
 
 main {
+  
 
   flex: 1;
-  padding: 80px 0 20px 20px;
+  padding: 100px 0 20px 0;
 }
 
 h1 {
-  font-size: 1.4rem;
+  margin: auto;
+  width: 90%;
+  font-size: 1.8rem;
+  padding-bottom: 20px;
 }
 
 .models-area {
-  width: 80%;
   margin: auto;
+  width: 90%;
+  
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
 aside.show {
-  padding-top: 50px;
-  width: 30vw;
+  padding-top: 80px;
+  width: 100%;
 }
 
 .models-item {
@@ -128,9 +146,6 @@ aside.show {
   background-color: chocolate;
 }
 
-.models-item-img:hover {
- 
-}
 
 .models-item--price {
   font-size: 18px;
@@ -429,9 +444,16 @@ aside.show {
 
 }
 @media (max-width: 1450px) {
-  aside.show {
-    width: 34vw;
+  .cart-fixed {
+    width: 35vw;
   }
+
+  .menu-desktop.ativo {
+    width: 35vw;
+    padding-right: 20px;
+
+  }
+ 
   .models-item-img {
     width: 200px;
     height: 200px;
@@ -444,9 +466,19 @@ aside.show {
   }
 }
 @media (max-width: 1300px) {
-  aside.show {
+
+
+  .cart-fixed {
     width: 40vw;
   }
+
+
+  .menu-desktop.ativo {
+    width: 40vw;
+    padding-right: 20px;
+  }
+  
+
   .cart--item-nome {
     flex: 1;
     font-size: 0.9rem;
@@ -457,8 +489,9 @@ aside.show {
     margin-right: 5px;
   }
   .models-area {
+    column-gap: 15px;
+    width: 75%;
     grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 840px) {
@@ -476,12 +509,17 @@ aside.show {
     display: flex;
   }
   main {
-    padding-top: 60px;
+    padding-top: 100px;
+  }
+
+  .cart-fixed {
+    position: relative;
+    width: 100%;
   }
 
   aside {
     position: fixed;
-    left: 100vw;
+    left: 150vw;
     height: 100vh;
     right: 0;
     left: 0;
@@ -493,6 +531,7 @@ aside.show {
 
   aside.show {
     width: auto;
+    padding-top:20px ;
   }
 
   
@@ -571,4 +610,5 @@ aside.show {
     display: block;
     
   }
+}
 }
