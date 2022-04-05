@@ -490,6 +490,65 @@ aside.show {
 .cart--totalitem span:first-child {
   font-weight: bold;
 }
+.desconto span {
+  display: inline-flex;
+  align-items: center;
+}
+
+::-webkit-input-placeholder {
+  color: #8d8d8d;
+  font-weight: normal;
+
+
+
+}
+.desconto input  {
+  width: 80%;
+  padding: 10px 10px;
+  outline: 0;
+  border: 0;
+  max-width: 150px;
+  transition: 0.3s ease-out;
+  font-size: 16px;
+  color:#adadad;
+  font-weight: bold;
+  margin-left: 15px;
+  border-radius: 5PX;
+  letter-spacing: 1PX;
+
+}
+.desconto input:focus {
+  box-shadow: 0 0 15px #95d8d4;
+  
+}
+
+.msgError  {
+  display: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(253, 135, 135, 0.562);
+  color: red;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.msgError p {
+  margin: 0;
+}
+
+.buttonAplicar i{
+  color: #BAE2DF;
+  font-size: 35px;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+.buttonAplicar i:hover{
+  transform: scale(1.1);
+  transition: all ease .2s;
+}
+
 
 .cart--totalitem.big {
   font-size: 20px;
@@ -564,7 +623,13 @@ aside.show {
     width: 40vw;
     padding-right: 20px;
   }
-  
+
+.desconto input  {
+  width: 60%;
+  max-width: 110px;
+  font-size: 12px;
+
+}
 
   .cart--item-nome {
     flex: 1;
@@ -658,7 +723,7 @@ aside.show {
   }
 
   .modelsInfo {
-   
+   margin-left: 0;
     padding: 10px 0;
     width: 100%;
    

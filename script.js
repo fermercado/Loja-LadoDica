@@ -1,6 +1,7 @@
 let cart = []
 let modalQt = 0
 let key = 0
+let codCupom = ''
 
 const a = el => document.querySelector(el)
 const al = el => document.querySelectorAll(el)
@@ -54,6 +55,7 @@ al(
 ).forEach(item => {
   item.addEventListener('click', () => {
     let body = document.querySelector('body')
+
     if (body.style.overflow == 'hidden') {
       body.style.overflow = 'auto'
     } else {
@@ -173,9 +175,34 @@ function cartShow() {
       a('.cart').append(cartItem)
       desconto = subtotal * 0.1
       total = subtotal - desconto
+
+      let cupom = document.querySelector('input')
+
+      cupom.addEventListener('input', event => {
+        let buttonAplicar = document.querySelector('.buttonAplicar')
+
+        buttonAplicar.addEventListener('click', () => {
+          let codCupom = 'LADODICA10'
+          let inputValue = event.target.value
+          if (inputValue == codCupom) {
+            a('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(
+              2
+            )}`
+            cupom.setAttribute('style', 'box-shadow: 0 0 15px #95d8d4')
+            a('.msgError').style.display = 'none'
+            a('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}`
+          } else {
+            cupom.setAttribute('style', 'box-shadow: 0 0 15px red')
+            a('.msgError').style.display = 'block'
+            a('.desconto span:last-child').innerHTML = 'R$--'
+            a('.total span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
+          }
+        })
+      })
+
       a('.subtotal span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
-      a('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`
-      a('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}`
+      // a('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`
+      a('.total span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
     })
   } else {
     a('aside').classList.remove('show')

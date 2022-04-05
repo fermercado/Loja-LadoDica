@@ -71,9 +71,21 @@
                 <span>Subtotal</span>
                 <span>R$--</span>
               </div>
+              <div class="msgError"><p>Cupom Invalido</p></div>
               <div class="cart--totalitem desconto">
-                <span>Desconto (-10%)</span>
-                <span>R$--</span>
+                <span
+                  >Desconto
+                  <input
+                    type="text"
+                    class="CupomDesconto"
+                    placeholder="Insira o cupom"
+                    required
+                  />
+                  <div class="buttonAplicar">
+                    <i class="fa-solid fa-circle-right"></i>
+                  </div>
+                </span>
+                <span class="cart-desconto">R$--</span>
               </div>
               <div class="cart--totalitem total big">
                 <span>Total</span>
