@@ -660,12 +660,13 @@ aside.show {
   header {
     display: flex;
   }
-  h1 {
-    padding-left: 0;
-    width:97%;
-    text-align: center;
-  }
 
+  main h1 {
+    padding-left: 0px;
+    width: 97%;
+    text-align: center;
+    
+  }
   .cart-fixed {
     position: relative;
     width: 100%;
