@@ -261,7 +261,7 @@ aside.show {
 .modelsWindowBody {
   width: 900px;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 0 15px #999;
   display: flex;
   margin: 20px 0;
@@ -646,8 +646,9 @@ aside.show {
 
   .modelsBig {
     flex: none;
-    width: 75%;
+    width: 300px;
     height: 300px;
+    overflow: hidden;;
   
   }
 
@@ -658,7 +659,7 @@ aside.show {
 
   .modelsInfo {
    
-    padding-bottom: 0;
+    padding: 10px 0;
     width: 100%;
    
   }
@@ -728,24 +729,27 @@ aside.show {
 @media (max-width: 425px) {
  
   .modelsBig {
-    width: 75%;
-    height: 200px;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
   
   }
 
   .modelsBig img {
-    height: 200px;
+    height: 250px;
     
   }
 
-  h1 {
-    padding: 15px 0 0 0;
-  }
-
+ 
   
   .modelsInfo h1 {
     font-size: 1.4rem;
     margin-top: 0;
+    
+  }
+  .modelsInfo  {
+    padding: 10px 0;
+    
     
   }
 
@@ -755,6 +759,7 @@ aside.show {
   font-size: 1rem;
   color: #999;
   margin: 10px 0 20px 0;
+ 
 }
   
 
