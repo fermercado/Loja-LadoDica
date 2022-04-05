@@ -94,7 +94,7 @@ a('.menu-openner').addEventListener('click', () => {
     a('aside').style.left = '0'
   }
 })
-a('.menu-openner').addEventListener('click', () => {
+a('.menu-openner ').addEventListener('click', () => {
   if (cart.length > 0) {
     a('.menu-desktop').classList.add('ativo')
   }
@@ -107,10 +107,10 @@ a('.cart--finalizar').addEventListener('click', () => {
   alert('COMPRA FINALIZADA')
 })
 
-a('.menu-close').addEventListener('click', () => {
+a('.menu-close i').addEventListener('click', () => {
   a('aside').style.left = '150vw'
 })
-a('.menu-close').addEventListener('click', () => {
+a('.menu-close i').addEventListener('click', () => {
   a('.menu-desktop').classList.remove('ativo')
 })
 
