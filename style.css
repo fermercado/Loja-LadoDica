@@ -10,6 +10,7 @@
 body {
   font-size: 1.2rem;
   display: flex;
+  overflow:auto;
 }
 
 .models {
@@ -238,7 +239,7 @@ aside.show {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  overflow: none;
+
   animation: ShowWindowArea 0.4s forwards;
 }
 
@@ -259,6 +260,7 @@ aside.show {
   box-shadow: 0 0 15px #999;
   display: flex;
   margin: 20px 0;
+  overflow: hidden;
 }
 
 .modelsBig {

@@ -35,6 +35,7 @@ productsJson.map((item, index) => {
     })
     a('.modelsInfo--qt').innerHTML = productQt
     a('.modelsWindowArea').style.display = 'flex'
+    a('body').style.overflow = 'hidden'
   })
 
   document.querySelector('.models-area').append(productItem)
@@ -47,11 +48,18 @@ function closeWindowProduct() {
   }, 200)
 }
 
-al('.modelsinfo--cancelbutton, .modelsInfo--cancelMobileButton').forEach(
-  item => {
-    item.addEventListener('click', closeWindowProduct)
-  }
-)
+al(
+  '.modelsinfo--cancelbutton, .modelsInfo--cancelMobileButton, .modelsInfo--addbutton'
+).forEach(item => {
+  item.addEventListener('click', () => {
+    let body = document.querySelector('body')
+    if (body.style.overflow == 'hidden') {
+      body.style.overflow = 'auto'
+    } else {
+    }
+    closeWindowProduct()
+  })
+})
 
 a('.modelsInfo--qtmenos').addEventListener('click', () => {
   if (productQt > 1) {
