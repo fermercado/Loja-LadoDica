@@ -5,7 +5,7 @@ let key = 0
 const a = el => document.querySelector(el)
 const al = el => document.querySelectorAll(el)
 
-productsJson.map((item, index) => {
+productsJson.forEach((item, index) => {
   let productItem = document
     .querySelector('.models .models-item')
     .cloneNode(true)
@@ -21,6 +21,7 @@ productsJson.map((item, index) => {
     e.preventDefault()
     key = e.target.closest('.models-item ').getAttribute('data-key', index)
     productQt = 1
+
     al('.carousel-item img').forEach((imgItem, imgIndex) => {
       imgItem.src = productsJson[key].img[imgIndex].src
     })

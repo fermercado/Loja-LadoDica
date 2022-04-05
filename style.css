@@ -125,11 +125,16 @@ main {
   padding: 120px 0 20px 0;
 }
 
-h1 {
+main h1 {
   padding-left: 100px;
   width: 90%;
   font-size: 1.8rem;
   padding-bottom: 20px;
+}
+ 
+h1 {
+  font-size: 1.8rem;
+  padding-bottom: 5px;
 }
 
 .models-area {
@@ -260,6 +265,7 @@ aside.show {
   box-shadow: 0 0 15px #999;
   display: flex;
   margin: 20px 0;
+  
   overflow: hidden;
 }
 
@@ -268,12 +274,14 @@ aside.show {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 15px;
 }
 .modelsBig--back {
   position: absolute;
   width: 30px;
   height: 30px;
   background-color: #000;
+  
 }
 
 .modelsBig img {
@@ -286,16 +294,14 @@ aside.show {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding-bottom: 50px;
+  padding: 30px 10px 30px 0;
+  margin-left: 15px;
   justify-content: space-between;
 }
 
-.modelsInfo h1 {
-  margin-top: 50px;
-}
 
 .modelsInfo .modelsInfo--desc {
-  font-size: 15px;
+  font-size: 18px;
   color: #999;
   margin-top: 10px;
 }
@@ -396,8 +402,13 @@ aside.show {
 .modelsinfo--cancelbutton {
   display: inline-block;
   cursor: pointer;
-  padding: 20px 30px;
+  padding: 10px 15px;
   border-radius: 15px;
+  
+}
+.modelsinfo--cancelbutton:hover{
+  transform: scale(1.1);
+  transition: all ease .3s;
   
 }
 
