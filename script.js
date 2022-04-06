@@ -1,12 +1,11 @@
 let cart = []
 let modalQt = 0
 let key = 0
-let codCupom = ''
 
 const a = el => document.querySelector(el)
 const al = el => document.querySelectorAll(el)
 
-productsJson.forEach((item, index) => {
+productsJson.map((item, index) => {
   let productItem = document
     .querySelector('.models .models-item')
     .cloneNode(true)
@@ -83,6 +82,7 @@ al('.modelsInfo--size').forEach((size, sizeIndex) => {
 })
 
 a('.modelsInfo--addbutton').addEventListener('click', () => {
+  clearInput()
   let size = parseInt(a('.modelsInfo--size.selected').getAttribute('data-key'))
   let identifier = productsJson[key].id + '@' + size
   let locaId = cart.findIndex(item => item.identifier == identifier)
@@ -108,6 +108,7 @@ a('.menu-openner').addEventListener('click', () => {
 a('.menu-openner ').addEventListener('click', () => {
   if (cart.length > 0) {
     a('.menu-desktop').classList.add('ativo')
+    a('.menu-desktop').style.width = '30vw'
   }
 })
 
@@ -123,6 +124,7 @@ a('.menu-close i').addEventListener('click', () => {
 })
 a('.menu-close i').addEventListener('click', () => {
   a('.menu-desktop').classList.remove('ativo')
+  a('.menu-desktop').style.width = '0'
 })
 
 function cartShow() {
@@ -164,34 +166,41 @@ function cartShow() {
             cart.splice(index, 1)
           }
           cartShow()
+          clearInput()
         })
       cartItem
         .querySelector('.cart--item--qtmais')
         .addEventListener('click', () => {
           itemCart.qt++
           cartShow()
+          clearInput()
         })
 
       a('.cart').append(cartItem)
-      desconto = subtotal * 0.1
-      total = subtotal - desconto
 
+      a('.subtotal span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
+      a('.total span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
+      // a('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`
+      // a('.total span:last-child').innerHTML = `R$ ${totalTeste.toFixed(2)}`
       let cupom = document.querySelector('input')
 
       cupom.addEventListener('input', event => {
         let buttonAplicar = document.querySelector('.buttonAplicar')
 
         buttonAplicar.addEventListener('click', () => {
+          desconto = subtotal * 0.1
+          total = subtotal - desconto
           let codCupom = 'LADODICA10'
           let inputValue = event.target.value
           if (inputValue == codCupom) {
             a('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(
               2
             )}`
+            a('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}`
             cupom.setAttribute('style', 'box-shadow: 0 0 15px #95d8d4')
             a('.msgError').style.display = 'none'
-            a('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}`
           } else {
+            clearInput()
             cupom.setAttribute('style', 'box-shadow: 0 0 15px red')
             a('.msgError').style.display = 'block'
             a('.desconto span:last-child').innerHTML = 'R$--'
@@ -199,10 +208,6 @@ function cartShow() {
           }
         })
       })
-
-      a('.subtotal span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
-      // a('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`
-      a('.total span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
     })
   } else {
     a('aside').classList.remove('show')
@@ -211,3 +216,12 @@ function cartShow() {
     a('aside').style.left = '150vw'
   }
 }
+
+function clearInput() {
+  let input = document.querySelector('input')
+  input.getAttribute('value')
+  input = input.value = ''
+  a('.desconto span:last-child').innerHTML = 'R$--'
+}
+
+clearInput()
