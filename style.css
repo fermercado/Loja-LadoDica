@@ -80,6 +80,7 @@ header {
   font-size: 2rem;
 }
 
+
 .cart-fixed {
   position: fixed;
   width: 30%;
@@ -101,7 +102,8 @@ aside {
 }
 
 .menu-desktop.ativo {
-  width: 30%;
+  width: 30vw;
+
 }
 
 .menu-desktop.ativo h1 {
@@ -122,7 +124,7 @@ main {
   
 
   flex: 1;
-  padding: 120px 0 20px 0;
+  padding: 120px 0 0 0;
 }
 
 main h1 {
@@ -418,6 +420,34 @@ aside.show {
   text-align: center;
   line-height: 40px;
   margin-bottom: 20px;
+}
+
+.footer {
+  color: #fff;
+  background-color: #BAE2DF;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+h3 {
+
+  font-size: 20px;
+  padding: 12px 0px;
+  letter-spacing: 2px;
+}
+
+.footer  i {
+  font-size: 2.6rem;
+  color: #fff;
+  padding-left: 20px;
+  cursor: pointer;
+}
+.footer  i:hover {
+  transform:scale(1.2);
+  transition: all ease .3s;
 }
 
 .cart {
@@ -839,6 +869,17 @@ aside.show {
     font-size: 20px;
   }
 
+  h3 {
+
+    font-size: 13px;
+    padding: 15px 0px;
+  }
+  
+  .footer  i {
+    font-size: 1.8rem;
+    
+  }
+
  
 
 .modelsInfo--addbutton {
@@ -848,5 +889,7 @@ aside.show {
     margin: 30px auto;
     justify-content: center;
   }
+
+
 
 }
