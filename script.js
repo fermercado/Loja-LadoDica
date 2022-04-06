@@ -4,8 +4,8 @@ let key = 0
 
 const a = el => document.querySelector(el)
 const al = el => document.querySelectorAll(el)
-
-productsJson.map((item, index) => {
+// ADICIONANDO LISTRA DE PRODUTOS A PARTIR DO PRODUCTS.JS//
+productsJson.forEach((item, index) => {
   let productItem = document
     .querySelector('.models .models-item')
     .cloneNode(true)
@@ -21,11 +21,10 @@ productsJson.map((item, index) => {
     e.preventDefault()
     key = e.target.closest('.models-item ').getAttribute('data-key', index)
     productQt = 1
-
+    // CAROUSEL DE IMAGEM//
     al('.carousel-item img').forEach((imgItem, imgIndex) => {
       imgItem.src = productsJson[key].img[imgIndex].src
     })
-    // a('.modelsBig img').src = productsJson[key].img[0].src
     a('.modelsInfo h1').innerHTML = productsJson[key].name
     a('.modelsInfo--desc').innerHTML = productsJson[key].description
     a('.modelsInfo--actualPrice').innerHTML = `R$ ${productsJson[
@@ -41,14 +40,14 @@ productsJson.map((item, index) => {
 
   document.querySelector('.models-area').append(productItem)
 })
-
+// FECHANDO O MODAL//
 function closeWindowProduct() {
   a('.modelsWindowArea').style.opacity = 0
   setTimeout(() => {
     a('.modelsWindowArea').style.display = 'none'
   }, 200)
 }
-
+// ADICIONANDO E REMOVENDO SCROLL DO BODY CONFORME MODAL SE ABRE//
 al(
   '.modelsinfo--cancelbutton, .modelsInfo--cancelMobileButton, .modelsInfo--addbutton'
 ).forEach(item => {
@@ -62,7 +61,7 @@ al(
     closeWindowProduct()
   })
 })
-
+// QUANTIDADE DE PRODUTOS//
 a('.modelsInfo--qtmenos').addEventListener('click', () => {
   if (productQt > 1) {
     productQt--
@@ -73,7 +72,7 @@ a('.modelsInfo--qtmais').addEventListener('click', () => {
   productQt++
   a('.modelsInfo--qt').innerHTML = productQt
 })
-
+// TAMANHOS DOS PRODUTOS//
 al('.modelsInfo--size').forEach((size, sizeIndex) => {
   size.addEventListener('click', size => {
     a('.modelsInfo--size.selected').classList.remove('selected')
@@ -99,7 +98,7 @@ a('.modelsInfo--addbutton').addEventListener('click', () => {
   cartShow()
   closeWindowProduct()
 })
-
+// ABRIR E FECHAR DO CARINHO DE COMPRA//
 a('.menu-openner').addEventListener('click', () => {
   if (cart.length > 0) {
     a('aside').style.left = '0'
@@ -108,15 +107,7 @@ a('.menu-openner').addEventListener('click', () => {
 a('.menu-openner ').addEventListener('click', () => {
   if (cart.length > 0) {
     a('.menu-desktop').classList.add('ativo')
-    a('.menu-desktop').style.width = '30vw'
   }
-})
-
-a('.cart--finalizar').addEventListener('click', () => {
-  cart = []
-  cartShow()
-  location.reload()
-  alert('COMPRA FINALIZADA')
 })
 
 a('.menu-close i').addEventListener('click', () => {
@@ -124,9 +115,15 @@ a('.menu-close i').addEventListener('click', () => {
 })
 a('.menu-close i').addEventListener('click', () => {
   a('.menu-desktop').classList.remove('ativo')
-  a('.menu-desktop').style.width = '0'
 })
-
+// FINALIZAR COMPRA //
+a('.cart--finalizar').addEventListener('click', () => {
+  cart = []
+  cartShow()
+  location.reload()
+  alert('COMPRA FINALIZADA')
+})
+// ADICIONANDO PRODUTOS E INFORMAÇÕES DENTRO DO CARRINHO//
 function cartShow() {
   a('.menu-openner span').innerHTML = cart.length
   if (cart.length > 0) {
@@ -136,7 +133,7 @@ function cartShow() {
     let subtotal = 0
     let desconto = 0
     let total = 0
-    cart.map((itemCart, index) => {
+    cart.forEach((itemCart, index) => {
       let modelItem = productsJson.find(itemBD => itemBD.id == itemCart.id)
       subtotal += modelItem.price * itemCart.qt
       let cartItem = a('.models .cart--item').cloneNode(true)
@@ -180,8 +177,7 @@ function cartShow() {
 
       a('.subtotal span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
       a('.total span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
-      // a('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`
-      // a('.total span:last-child').innerHTML = `R$ ${totalTeste.toFixed(2)}`
+      // VALIDANDO CUPOM DE DESCONTO//
       let cupom = document.querySelector('input')
 
       cupom.addEventListener('input', event => {
@@ -212,11 +208,10 @@ function cartShow() {
   } else {
     a('aside').classList.remove('show')
     a('.menu-desktop').classList.remove('ativo')
-    a('.menu-desktop').style.width = '0'
     a('aside').style.left = '150vw'
   }
 }
-
+//LIMPANDO CUPOM DE DESCONTO//
 function clearInput() {
   let input = document.querySelector('input')
   input.getAttribute('value')
