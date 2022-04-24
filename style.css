@@ -452,6 +452,8 @@ h3 {
 
 .cart {
   margin-bottom: 20px;
+  height: 450px;
+  overflow-y: auto;
   
 }
 
